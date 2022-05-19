@@ -37,9 +37,14 @@ app.use(async (req, res, next) => {
 
 // call routes
 app.use(config.URL_DOMAIN + "/auth", routes.UserRoute);
-app.use(config.URL_DOMAIN + "/Curriculum", routes.CurriculumRoute);
-app.use(config.URL_DOMAIN + "/Curriculum_review", routes.Curriculum_reviewRoute);
-app.use(config.URL_DOMAIN + "/edit_batch", routes.EditBatchRoute);
+app.use(config.URL_API + "/bootcamp", routes.BootcampRoute);
+// app.use(config.URL_API + "/berbayar", routes.BerbayarRoute);
+// app.use(config.URL_API + "/regular", routes.RegularRoute);
+app.use(config.URL_API + "/curriculum_reviews", routes.CurriculumReviewsRoute);
+app.use(config.URL_API + "/batch", routes.BatchRoute);
+app.use(config.URL_API + "/placement", routes.PlacementRoute);
+app.use(config.URL_API + "/instructor", routes.InstructorRoute);
+app.use(config.URL_API + "/talent", routes.TalentRoute);
 
 //use middleware to handle error from others modules
 app.use(middleware.handleError);

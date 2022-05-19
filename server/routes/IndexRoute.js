@@ -1,11 +1,21 @@
 import UserRoute from "./UserRoute";
-import CurriculumRoute from "./CurriculumRoute";
-import Curriculum_reviewRoute from "./Curriculum_reviewRoute";
-import EditBatchRoute from "./EditBatchRoute"
+import BootcampRoute from "./BootcampRoute";
+import CurriculumReviewsRoute from "./CurriculumReviewsRoute";
+import BatchRoute from "./BatchRoute";
+import PlacementRoute from "./PlacementRoute";
+import InstructorRoute from "./InstructorRoute";
+import TalentRoute from "./TalentRoute";
+// import BerbayarRoute from "./BerbayarRoute";
+// import RegularRoute from "./RegularRoute";
 
 export default {
   UserRoute,
-  CurriculumRoute,
-  Curriculum_reviewRoute,
-  EditBatchRoute
+  BootcampRoute,
+  CurriculumReviewsRoute,
+  BatchRoute,
+  PlacementRoute,
+  TalentRoute,
+  InstructorRoute,
+  // BerbayarRoute,
+  // RegularRoute
 };

@@ -1,3 +1,6 @@
+import { sequelize } from "../models/init-models";
+const { Op } = require("sequelize"); 
+
 const findBatch = async (req, res) => {
     try {
         const result = await req.context.models.batch.findAll({
@@ -199,6 +202,18 @@ const AddMembers = async (req, res) => {
     }
 }
 
+const update = async (req,res,next) =>{
+    const {files,fields} = req.fileAttrb
+    try{
+        const data = await req.context.models.talent.update({
+            tale_photo : files[0].file.newFilename
+        }, {returning : true, where:{tale_id : req.params.id}})
+        return res.status(201).json(data)
+    } catch (error) {
+        return res.status(404).send("no data found")       
+    }
+}
+
 
 
 
@@ -209,5 +224,7 @@ export default{
     UpdateBatchStatus,
     deleteBatch,
     UpdateBatch,
-    AddMembers
+    AddMembers,
+    update
 }
+

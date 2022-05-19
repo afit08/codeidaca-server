@@ -57,9 +57,13 @@ app.use(async (req, res, next) => {
 // call routes
 
 app.use(_config.default.URL_DOMAIN + "/auth", _IndexRoute.default.UserRoute);
-app.use(_config.default.URL_DOMAIN + "/Curriculum", _IndexRoute.default.CurriculumRoute);
-app.use(_config.default.URL_DOMAIN + "/Curriculum_review", _IndexRoute.default.Curriculum_reviewRoute);
-app.use(_config.default.URL_DOMAIN + "/edit_batch", _IndexRoute.default.EditBatchRoute); //use middleware to handle error from others modules
+app.use(_config.default.URL_API + "/bootcamp", _IndexRoute.default.BootcampRoute);
+app.use(_config.default.URL_API + "/berbayar", _IndexRoute.default.BerbayarRoute);
+app.use(_config.default.URL_API + "/curriculum_reviews", _IndexRoute.default.CurriculumReviewsRoute);
+app.use(_config.default.URL_API + "/batch", _IndexRoute.default.BatchRoute);
+app.use(_config.default.URL_API + "/placement", _IndexRoute.default.PlacementRoute);
+app.use(_config.default.URL_API + "/instructor", _IndexRoute.default.InstructorRoute);
+app.use(_config.default.URL_API + "/talent", _IndexRoute.default.TalentRoute); //use middleware to handle error from others modules
 
 app.use(_middleware.default.handleError);
 app.use(_middleware.default.notFound); // set to false agar tidak di drop tables yang ada didatabase
